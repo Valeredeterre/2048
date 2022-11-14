@@ -1,21 +1,18 @@
 #include "game.h"
-#include <conio.h>
 
 int main()
 {
-	char input = ' ';
-	Game game(4);
-	game.displayBoard();
-	//while (!game.GetIsLose() && input != 'o')
-	//{
-	//	game.displayBoard();
-	//	do
-	//	{
-	//		std::cout << "Enter a direction (z,q,s,d) or q to quit:  ";
-	//		input = _getch();
-	//		std::cout imput;
-	//	}
-	//	while (!game.move(input));
-	//}
+	Game game(3);
+	while (!game.GetIsLose())
+	{
+		game.displayBoard();
+		Sleep(500);
+		do
+		{
+			std::cout << "Enter a direction (z,q,s,d) or 'e' to quit:\n";
+		}
+		while (!game.move());
+		//game.checkIsLoose();
+	}
 	return EXIT_SUCCESS;
 }

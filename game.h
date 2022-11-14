@@ -1,30 +1,38 @@
 #pragma once
-#include <iostream>
 #include <vector>
 #include <time.h>
+#include <conio.h>
 #include <stdlib.h>
+#include <iostream>
+#include <Windows.h>
 
 class Game
 {
 public:
-	Game(int size);
 	Game();
-	void displayBoard();
-	int getCase(int x, int y);
-	void setCase(int x, int y, int value);
+	Game(int size);
+	bool move();
 	bool GetIsLose();
+	void displayBoard();
+	void checkIsLoose();
+	void setCase(int x, int y, int value);
 	
 private:
-	//bool moveUp();
-	//bool moveLeft();
-	//bool moveDown();
-	//bool moveRight();
+	
+	//private methods
+	bool moveUp();
+	bool moveLeft();
+	bool moveDown();
+	bool moveRight();
 	void addRandomCase();
-	bool move(char direction);
+	int getCase(int x, int y);
+	
+	//private variables
 	int _size;
-	std::vector<int> _board;
 	int _score;
-	int _nbMouvement;
 	bool _isLose;
+	int _nbMouvement;
+	std::vector<int> _board;
+	
 };
 
